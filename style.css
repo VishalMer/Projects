@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'MV Boli', 'OCR A', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Atma", system-ui;
+    font-weight: 600;
 }
 
 body {
