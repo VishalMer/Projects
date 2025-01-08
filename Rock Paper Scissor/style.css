@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Atma", system-ui;
+    font-weight: 600;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+}
+
+.container{
+    width: 80%; /* Set container width to 80% */
+    max-width: 500px; /* Optional max-width for larger screens */
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    height: auto; /* Allow the height to adjust dynamically */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result_images {
+    display: flex;
+    column-gap: 6rem;
+    position: static;
+    margin-bottom: 15px;
+    justify-content: center; /* Center align results */
+}
+
+.container.start .user_result{
+    transform-origin: left ;
+    animation: usershake 0.7s ease infinite;
+}
+
+.container.start .cpu_result{
+    transform-origin: right ;
+    animation: cpushake 0.7s ease infinite;
+}
+
+.result_images img {
+    width: 100px;
+}
+
+.user_result img{
+    transform: rotate(90deg) rotateY(180deg);
+    width: 100px; /* Fixed width for consistent sizing */
+}
+
+.cpu_result img{
+    transform: rotate(-90deg);
+    width: 100px; /* Fixed width for consistent sizing */
+}
+
+.result{
+    text-align: center;
+    font-size: 2rem;
+    color: skyblue;
+    margin-top: 1.5rem;
+}
+
+.option_images{
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Space around options */
+    flex-wrap: wrap; /* Allow wrapping of elements */
+    margin: 2.5rem 2.5rem 0 2.5rem;
+}
+
+.container.start .option_images{
+    pointer-events: none;
+}
+
+.option_image {
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    opacity: 0.45;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    text-align: center; 
+    margin: 1.5rem; /* Optional margin for better spacing */
+}
+
+.option_images img{
+    width: 60px;
+    text-align: center;
+}
+
+.option_image:hover{
+    opacity: 1;
+}
+
+.option_image.active{
+    opacity: 1;
+}
+
+.option_image p{
+    color: skyblue;
+    font-size: 1.23rem;
+    margin-top: 1rem;
+}
+
+
+/* Keyframes for shake animations */
+@keyframes usershake {
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes cpushake {
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Reduced padding for smaller screens */
+    }
+
+    .result {
+        font-size: 1.5rem; /* Smaller font size for results */
+    }
+
+    .result_images {
+        flex-direction: row; /* Stack results vertically */
+        column-gap: 3rem; /* Space between images */
+
+    }
+
+    .user_result img,
+    .cpu_result img {
+        flex-direction: row; /* Stack results vertically */
+        width: 70px; /* Smaller images */
+    }
+
+    .option_images {
+        justify-content: center; /* Center align options */
+        flex-wrap: unset;
+
+    }
+
+    .option_image {
+        margin: 0 1rem 1rem 1rem; 
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .result {
+        font-size: 1.2rem; /* Further reduce size for very small devices */
+    }
+
+    .option_image p {
+        font-size: 1rem; /* Smaller font for option text */
+    }
+}
