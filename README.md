@@ -1,2 +1,1 @@
-# Rock-Paper-Scissors
-Rock Paper Scissors Game
+Welcome to the **Projects** repository! This repository contains projects that demonstrate my skills and knowledge in Web Designing and Development. Each project is self-contained and includes a brief description.
